@@ -1,0 +1,3 @@
+# Include specific file extensions if they appear in a project folder,
+# which is always two levels deep
+!*.test.tsx

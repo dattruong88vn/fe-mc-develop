@@ -1,0 +1,23 @@
+{
+  "data": {
+    "statusEkyc": null,
+    "statusCard": null,
+    "objectId": "5c448c89-9535-4515-b9c1-00cb45708ee7",
+    "cardType": "CCCD_CHIP",
+    "ocr": {
+      "pass": true,
+      "idNumberOld": null,
+      "address": "Xóm Xuân Trung Nghi Đức, Thành Phố Vinh, Nghệ An",
+      "gender": "Nam",
+      "nationality": "Việt Nam",
+      "dob": "44/07/1996",
+      "name": "PHẠM VĂN TRÀN",
+      "id_number": "040096014189",
+      "home_town": "Nghi Đức Thành Phố Vinh, Nghệ Anh",
+      "issued_date": "27/12/2021",
+      "expiry_date": "4/07/2036",
+      "id_type": 6
+    },
+    "face-matching": null
+  }
+}

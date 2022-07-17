@@ -1,0 +1,214 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://rancher-k8s.mcredit.com.vn/k8s/clusters/c-5g2h9
+  name: aws-stag-3p-cluster
+- cluster:
+    server: https://rancher-k8s.mcredit.com.vn/k8s/clusters/c-q4p7l
+  name: aws-stag-common-cluster
+
+- cluster:
+    server: "https://rancher-k8s.mcredit.com.vn/k8s/clusters/c-lxfng"
+  name: "aws-prod-internal-channel-cluster"
+
+- cluster:
+    server: https://rancher-k8s.mcredit.com.vn/k8s/clusters/c-mv962
+  name: aws-stag-internal-channel-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-m8w6j
+  name: dev-3p-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-zf879
+  name: dev-aws-eks-score
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-ph2s2
+  name: dev-common-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-dxpbh
+  name: dev-ekyc-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-cn4jh
+  name: dev-external-channel-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-chsgm
+  name: dev-internal-channel-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-zxlqp
+  name: mcredit-dev-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-tqncs
+  name: mcredit-sit-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-gsvcn
+  name: mcredit-uat-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-zhclp
+  name: stag-ekyc-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-89nt4
+  name: uat-3p-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-w6qxj
+  name: uat-common-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-lswn7
+  name: uat-ekyc-eks-01
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-xl6hz
+  name: uat-external-channel-cluster
+- cluster:
+
+    server: https://nprod-rancher-k8s.mcredit.com.vn/k8s/clusters/c-2lxvx
+  name: uat-internal-channel-cluster
+contexts:
+- context:
+    cluster: aws-stag-3p-cluster
+    user: aws-stag-3p-cluster
+  name: aws-stag-3p-cluster
+- context:
+    user: "aws-prod-internal-channel-cluster"
+    cluster: "aws-prod-internal-channel-cluster"
+  name: "aws-prod-internal-channel-cluster"
+- context:
+    cluster: aws-stag-common-cluster
+    user: aws-stag-common-cluster
+  name: aws-stag-common-cluster
+- context:
+    cluster: aws-stag-internal-channel-cluster
+    user: aws-stag-internal-channel-cluster
+  name: aws-stag-internal-channel-cluster
+- context:
+    cluster: dev-3p-cluster
+    user: dev-3p-cluster
+  name: dev-3p-cluster
+- context:
+    cluster: dev-aws-eks-score
+    user: dev-aws-eks-score
+  name: dev-aws-eks-score
+- context:
+    cluster: dev-common-cluster
+    user: dev-common-cluster
+  name: dev-common-cluster
+- context:
+    cluster: dev-ekyc-eks-01
+    user: dev-ekyc-eks-01
+  name: dev-ekyc-eks-01
+- context:
+    cluster: dev-external-channel-cluster
+    user: dev-external-channel-cluster
+  name: dev-external-channel-cluster
+- context:
+    cluster: dev-internal-channel-cluster
+    user: dev-internal-channel-cluster
+  name: dev-internal-channel-cluster
+- context:
+    cluster: mcredit-dev-eks-01
+    user: mcredit-dev-eks-01
+  name: mcredit-dev-eks-01
+- context:
+    cluster: mcredit-sit-eks-01
+    user: mcredit-sit-eks-01
+  name: mcredit-sit-eks-01
+- context:
+    cluster: mcredit-uat-eks-01
+    user: mcredit-uat-eks-01
+  name: mcredit-uat-eks-01
+- context:
+    cluster: stag-ekyc-eks-01
+    user: stag-ekyc-eks-01
+  name: stag-ekyc-eks-01
+- context:
+    cluster: uat-3p-cluster
+    user: uat-3p-cluster
+  name: uat-3p-cluster
+- context:
+    cluster: uat-common-cluster
+    user: uat-common-cluster
+  name: uat-common-cluster
+- context:
+    cluster: uat-ekyc-eks-01
+    user: uat-ekyc-eks-01
+  name: uat-ekyc-eks-01
+- context:
+    cluster: uat-external-channel-cluster
+    user: uat-external-channel-cluster
+  name: uat-external-channel-cluster
+- context:
+    cluster: uat-internal-channel-cluster
+    user: uat-internal-channel-cluster
+  name: uat-internal-channel-cluster
+current-context: dev-common-cluster
+kind: Config
+preferences: {}
+users:
+- name: "aws-prod-internal-channel-cluster"
+  user:
+    token: "kubeconfig-u-jaertgvso3qzb4k:zhq8srbsg7jt2gbv87flq4llxbvpsjh98nqzb2mxz5dkjdt5jvrz5g"
+- name: aws-stag-3p-cluster
+  user:
+    token: kubeconfig-u-xzmb3kpeniv29ds:phk2t4dkvzl65bgqxm255nzkrwn82mnz2db4bc8pf4rwkwbllhtdll
+- name: aws-stag-common-cluster
+  user:
+    token: kubeconfig-u-xzmb3kpeni:ddn4mnj5pb895zs6hmfj59cqqxhjr2cw6scklzd9kf96bvcn5vxpqg
+- name: aws-stag-internal-channel-cluster
+  user:
+    token: kubeconfig-u-xzmb3kpeni:ddn4mnj5pb895zs6hmfj59cqqxhjr2cw6scklzd9kf96bvcn5vxpqg
+- name: dev-3p-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: dev-aws-eks-score
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: dev-common-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: dev-ekyc-eks-01
+  user:
+    token: kubeconfig-u-ip2olk6f3t:6c6k65gc2fwdcwgwxt8df7qwftx4n9xmvjqsgn7wwg649vg9nkq5n4
+- name: dev-external-channel-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: dev-internal-channel-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: mcredit-dev-eks-01
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: mcredit-sit-eks-01
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: mcredit-uat-eks-01
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: stag-ekyc-eks-01
+  user:
+    token: kubeconfig-u-ip2olk6f3t:6c6k65gc2fwdcwgwxt8df7qwftx4n9xmvjqsgn7wwg649vg9nkq5n4
+- name: uat-3p-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: uat-common-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: uat-ekyc-eks-01
+  user:
+    token: kubeconfig-u-ip2olk6f3t:6c6k65gc2fwdcwgwxt8df7qwftx4n9xmvjqsgn7wwg649vg9nkq5n4
+- name: uat-external-channel-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f
+- name: uat-internal-channel-cluster
+  user:
+    token: kubeconfig-u-pwziiuhvvo:fdx4q5gl969hm4w5f8mlp8ffbw5mtczp9p29qhqdqvs5c7l46brn4f

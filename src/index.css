@@ -1,0 +1,105 @@
+@import '~antd/dist/antd.css';
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+@font-face {
+  font-family: 'SF UI Display Ultralight';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Ultralight'),
+    url('assets/fonts/sf-ui-display-ultralight-58646b19bf205.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Thin'),
+    url('assets/fonts/sf-ui-display-thin-58646e9b26e8b.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Light'),
+    url('assets/fonts/sf-ui-display-light-58646b33e0551.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Medium'),
+    url('assets/fonts/sf-ui-display-medium-58646be638f96.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Semibold'),
+    url('assets/fonts/sf-ui-display-semibold-58646eddcae92.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Bold'),
+    url('assets/fonts/sf-ui-display-bold-58646a511e3d9.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Heavy';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Heavy'),
+    url('assets/fonts/sf-ui-display-heavy-586470160b9e5.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Black'),
+    url('assets/fonts/sf-ui-display-black-58646a6b80d5a.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.ant-message-notice-content {
+  width: 95%;
+  background-color: #ff5561;
+  color: white;
+  border-radius: 6px;
+}
+
+.ant-message-error .anticon {
+  color: #0a2851;
+  opacity: 0.4;
+}
+
+input:focus {
+  outline: none;
+}
+
+.base-input-register .ant-input-prefix {
+  margin-right: 25px;
+}
+
+.slick-slider .slick-next {
+  display: none !important;
+}

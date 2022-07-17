@@ -1,0 +1,18 @@
+const ActionKeys = {
+  AUTH: {
+    CUSTOMERINFO: 'CUSTOMERINFO'
+  },
+  TOKEN: {
+    GET_REFRESH_TOKEN: 'GET_REFRESH_TOKEN',
+    GET_EXTERNAL_TOKEN: 'GET_EXTERNAL_TOKEN',
+    GET_TOKEN: 'GET_TOKEN'
+  },
+  OCR: {
+    GET_OCR_DATA: 'GET_OCR_DATA'
+  },
+  IDENTITY: {
+    DATA_IDENTITY: 'DATA_IDENTITY'
+  }
+};
+
+export default ActionKeys;

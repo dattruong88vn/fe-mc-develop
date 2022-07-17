@@ -1,0 +1,16 @@
+[
+  {
+    "code": "1",
+    "name": "name 1",
+    "wpDistrictId": "wpDistrictId1",
+    "wpProvinceId": "wpProvinceId1",
+    "wpWardId": "wpWardId1"
+  },
+  {
+    "code": "2",
+    "name": "name 2",
+    "wpDistrictId": "wpDistrictId2",
+    "wpProvinceId": "wpProvinceId2",
+    "wpWardId": "wpWardId2"
+  }
+]

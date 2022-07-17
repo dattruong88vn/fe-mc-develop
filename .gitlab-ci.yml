@@ -1,0 +1,63 @@
+image: public.ecr.aws/n5y5t4w1/mc-docker-custome:docker-stable
+
+services:
+  - public.ecr.aws/n5y5t4w1/mc-docker-custome:v3
+
+variables:
+  DOCKER_HOST: tcp://localhost:2375
+  DOCKER_TLS_CERTDIR: ""
+  REPOSITORY_URL: 285484073914.dkr.ecr.ap-southeast-1.amazonaws.com/${CI_PROJECT_NAME}
+  DOCKER_DRIVER: overlay2
+  KUBECONFIG: /etc/deploy/config
+  GIT_DEPTH: 0
+
+cache: &global_cache
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+
+stages:
+  - code quality  
+  - dockerize
+  - deploy
+
+scan_code:
+  image: sonarsource/sonar-scanner-cli
+  variables:
+    SONAR_HOST_URL: $SONAR_HOST_URL
+    SONAR_TOKEN: $SONAR_TOKEN
+  stage: code quality
+  script:
+    - sonar-scanner -Dsonar.projectKey="$CI_PROJECT_NAME" -Dsonar.projectName="$CI_PROJECT_TITLE" -Dsonar.qualitygate.wait=true
+  only:
+    - develop
+    - uat
+    - stag
+    - master
+
+docker_build:
+  stage: dockerize
+  cache: {}
+  script:
+    - aws sts get-caller-identity
+    - docker build -t demo-app -f ./Dockerfile . --network="host"
+    - docker tag demo-app $REPOSITORY_URL:${CI_COMMIT_SHA:0:8}
+    - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin $REPOSITORY_URL
+    - docker push $REPOSITORY_URL:${CI_COMMIT_SHA:0:8}
+  only:
+    - develop
+
+deploy_dev:
+  image: public.ecr.aws/n5y5t4w1/helm-kubectl:latest
+  stage: deploy
+  before_script:
+    - mkdir /etc/deploy
+    - cp config /etc/deploy
+    - kubectl config get-contexts
+    - kubectl config use-context dev-3p-cluster
+  script:
+    - >
+       helm upgrade --install ${CI_PROJECT_NAME} -n bnpl charts/${CI_PROJECT_NAME} --set image.tag=${CI_COMMIT_SHA:0:8}
+  only:
+    - develop
+    

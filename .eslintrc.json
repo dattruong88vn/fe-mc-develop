@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+		"react": {
+			"version": "latest"
+		}
+	},
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true,
+      "classes": true,
+      "jsx": true
+    },
+		"ecmaVersion": 12,
+		"sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+		"plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+			"error",
+			{
+				"extensions": [".tsx", ".js", ".jsx"]
+			}
+		],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+		"react/no-array-index-key": 2,
+    "strict": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "function-paren-newline": 0,
+    "guard-for-in": 0,
+    "max-len": 0,
+    "no-nested-ternary": 0,
+    "no-console": 0,
+    "no-shadow": 0,
+    "object-curly-newline": 0,
+    "global-require": 0,
+    "new-cap": 0,
+    "class-methods-use-this": 0,
+    "react/prefer-stateless-function": 0,
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/label-has-for": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/imports-first": 0,
+    "comma-dangle": 0,
+    "react/no-access-state-in-setstate": 0,
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
